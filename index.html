@@ -25,31 +25,30 @@
     </form>
     
     <script>
-        function calcresultado(){
+         function calcImc(){
             var peso = document.getElementById("peso").value;
             var altura = document.getElementById ("altura").value;
             var imc = peso / (altura ** 2);
             document.getElementById("resultado").textContent = imc.toFixed(2);
             document.getElementById("msg").textContent = "";
 
-            if ( (resultado >= 40)) {
-                document.getElementById("msg").textContent = "abaixo do peso!";
-            } else if ( (resultado >= 35) && (resultado <= 40) ) {
+            if ( (imc <= 16,9)) {
                 document.getElementById("msg").textContent = "muito abaixo do peso!";
-            } else if ( (resultado >= 30) && (resultado <= 34,9)) {
+            } else if ( (imc >= 17) && (imc <= 18,4)) {
+                document.getElementById("msg").textContent = "abaixo do peso!";
+            } else if ( (imc >= 18,5) && (imc <= 24,9)) {
                 document.getElementById("msg").textContent = "com peso ideal";
-            } else if ( (resultado >= 25) && (resultado <= 29,9)) {
+            } else if ( (imc >= 25) && (imc <= 29,9)) {
                 document.getElementById("msg").textContent = "acima do peso";
-            } else if ( (resultado >= 18,5) && (resultado <= 24,9) ) {
+            } else if ( (imc >= 30) && (imc <= 34,9)) {
                 document.getElementById("msg").textContent = "com obesidade grau I";
-            } else if ( (resultado >= 17) && (resultado <= 18,4)) {
+            } else if ( (imc >= 35) && (imc <= 40)) {
                 document.getElementById("msg").textContent = "com, obesidade grau II";
-            } else if ( (resultado <= 16,9)) {
+            } else if ( (imc >= 40)) {
                 document.getElementById("msg").textContent = "obesidade grau III";
             } else {
-                document.getElementById("msg") = "Digite um valor!";
+                document.getElementById("msg").textContent = "digite um valor";
             }
-            
         }
     </script>
 </body>
