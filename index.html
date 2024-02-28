@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Massa Corporal</title>
+</head>
+<body>
+
+    <h1>Resultado - Índice de Massa Corporal</h1>
+
+    <form action="">
+        <label for="altura">Altura: </label>
+        <input type="number" id="altura">
+        <br>
+
+        <label for="peso">Peso (Kg)</label>
+        <input type="number" id="peso" maxlength="5">
+        <br>
+
+        <button onclick="calcresultado()">Calcular resultado</button>
+        <br>
+
+        <p>Seu índice de massa corporal é: <span id="resultado"></span> e você está <span id="msg"></span></p>
+    </form>
+    
+    <script>
+        function calcresultado(){
+            var peso = document.getElementById("peso").value;
+            var altura = document.getElementById ("altura").value;
+            var imc = peso / (altura ** 2);
+            document.getElementById("resultado").textContent = imc.toFixed(2);
+            document.getElementById("msg").textContent = "";
+
+            if ( (resultado >= 40)) {
+                document.getElementById("msg").textContent = "abaixo do peso!";
+            } else if ( (resultado >= 35) && (resultado <= 40) ) {
+                document.getElementById("msg").textContent = "muito abaixo do peso!";
+            } else if ( (resultado >= 30) && (resultado <= 34,9)) {
+                document.getElementById("msg").textContent = "com peso ideal";
+            } else if ( (resultado >= 25) && (resultado <= 29,9)) {
+                document.getElementById("msg").textContent = "acima do peso";
+            } else if ( (resultado >= 18,5) && (resultado <= 24,9) ) {
+                document.getElementById("msg").textContent = "com obesidade grau I";
+            } else if ( (resultado >= 17) && (resultado <= 18,4)) {
+                document.getElementById("msg").textContent = "com, obesidade grau II";
+            } else if ( (resultado <= 16,9)) {
+                document.getElementById("msg").textContent = "obesidade grau III";
+            } else {
+                document.getElementById("msg") = "Digite um valor!";
+            }
+            
+        }
+    </script>
+</body>
+</html>
