@@ -69,6 +69,10 @@ button {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+button:active {
+    transform: scale(0.9);
+}
+
 .span-color {
     background-color: #fff;
     padding-right:  20%;
